@@ -19,11 +19,12 @@ namespace PlayingWithShouldly.Tests
             playerCharacter.Weapons.ShouldNotContain("Staff of Wonder");
         }
 
-        [Test]
+       [Test]
         public void ShouldHaveALongBow()
         {
             var playerCharacter = new PlayerCharacter();
-            Assert.That(playerCharacter.Weapons, Has.Member("Long Bow"));
+            //Assert.That(playerCharacter.Weapons, Has.Member("Long Bow"));
+            playerCharacter.Weapons.ShouldContain("Long Bow");
         }
 
         [Test]

@@ -21,7 +21,8 @@ namespace PlayingWithShouldly
             {
                 "Long Bow",
                 "Short Sword",
-                "Staff of Wonder"
+                "Small Shield"
+                //"Staff of Wonder"
             };
         }
     }
