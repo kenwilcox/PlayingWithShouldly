@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NameJoinerTests.cs" />
+    <Compile Include="DateTimeTests.cs" />
     <Compile Include="PlayerCharacterTests.cs" />
     <Compile Include="FixiePlayerCharacterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

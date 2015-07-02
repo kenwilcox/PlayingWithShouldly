@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogMessageEntry.cs" />
+    <Compile Include="LogMessageWriter.cs" />
     <Compile Include="NameJoiner.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
