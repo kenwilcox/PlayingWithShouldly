@@ -13,5 +13,9 @@ namespace PlayingWithShouldly
             return firstName.ToUpperInvariant() + " " + lastName.ToUpperInvariant();
         }
 
+        public string Join(string firstName, string lastName)
+        {
+            return firstName + " " + lastName;
+        }
     }
 }
