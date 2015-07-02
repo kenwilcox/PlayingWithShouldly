@@ -42,6 +42,30 @@ namespace PlayingWithShouldly.Tests
             playerCharacter.MagicDamage(percent).ShouldBe(currentHitPoints - percentage);
         }
 
+        public void ShouldBeNoobByDefault()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.IsNoob.ShouldBe(true);
+        }
+
+        public void ShouldHaveADefaultName()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Name.ShouldNotBe(null);
+        }
+
+        public void ShouldNotHaveANullName()
+        {
+            var playerCharacter = new PlayerCharacter {Name = null};
+            playerCharacter.Name.ShouldNotBe(null);
+        }
+
+        public void ShouldNotHaveAnEmptyName()
+        {
+            var playerCharacter = new PlayerCharacter { Name = "" };
+            playerCharacter.Name.ShouldNotBeNullOrEmpty();
+        }
+
         public void JustTestingOutDoublesWithShouldly()
         {
             var playerCharacter = new PlayerCharacter();

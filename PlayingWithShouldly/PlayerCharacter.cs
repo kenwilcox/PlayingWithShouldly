@@ -8,13 +8,32 @@ namespace PlayingWithShouldly
 {
     public class PlayerCharacter
     {
+        private string _name;
         public List<string> Weapons;
         public int HitPoints { get; private set; }
-         
+        public bool IsNoob { get; set; } 
+        public string Name { get { return _name; } set { if (!string.IsNullOrEmpty(value)) _name = value; } }
+
         public PlayerCharacter()
         {
             HitPoints = 20;
+            IsNoob = true;
+            Name = GenerateName();
             CreateStartingWeapons();
+        }
+
+        private static string GenerateName()
+        {
+            var names = new[]
+            {
+                "Danieth",
+                "Derick",
+                "Shalnorr",
+                "G'Toth'lop",
+                "Boldrakteethtop"
+            };
+
+            return names[new Random().Next(0, names.Length)];
         }
 
         private void CreateStartingWeapons()
