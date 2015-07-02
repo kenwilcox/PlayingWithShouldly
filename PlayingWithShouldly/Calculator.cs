@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PlayingWithShouldly
 {
     public class Calculator
     {
-        public int AddInts(int a, int b)
+        public static int AddInts(int a, int b)
         {
+            Thread.Sleep(98);
             return a + b;
         }
 

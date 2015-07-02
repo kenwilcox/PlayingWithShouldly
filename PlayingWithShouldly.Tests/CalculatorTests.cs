@@ -21,5 +21,12 @@ namespace PlayingWithShouldly.Tests
             var ex = Should.Throw<ArgumentOutOfRangeException>(() => calculator.Divide(101, 0));
             ex.ParamName.ShouldBe("number");
         }
+
+        public void ShouldAddNumbers()
+        {
+            var calculator = new Calculator();
+            Should.CompleteIn(() => Calculator.AddInts(1, 2), TimeSpan.FromMilliseconds(100));
+        }
+
     }
 }
