@@ -58,6 +58,7 @@
     <Compile Include="PlayerCharacterTests.cs" />
     <Compile Include="FixiePlayerCharacterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlayingWithShouldly\PlayingWithShouldly.csproj">
