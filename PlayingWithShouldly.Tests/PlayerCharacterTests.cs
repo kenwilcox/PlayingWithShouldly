@@ -15,7 +15,9 @@ namespace PlayingWithShouldly.Tests
         public void ShouldNotHaveAStaffOfWonder()
         {
             var playerCharacter = new PlayerCharacter();
+            // NUnit
             //Assert.That(playerCharacter.Weapons, Has.No.Member("Staff of Wonder"));
+            // Shouldly
             playerCharacter.Weapons.ShouldNotContain("Staff of Wonder");
         }
 
@@ -23,7 +25,9 @@ namespace PlayingWithShouldly.Tests
         public void ShouldHaveALongBow()
         {
             var playerCharacter = new PlayerCharacter();
+            // NUnit
             //Assert.That(playerCharacter.Weapons, Has.Member("Long Bow"));
+            //Shouldly
             playerCharacter.Weapons.ShouldContain("Long Bow");
         }
 
@@ -31,7 +35,10 @@ namespace PlayingWithShouldly.Tests
         public void ShouldHaveAtLeaseOneKindOfSword()
         {
             var playerCharacter = new PlayerCharacter();
-            Assert.That(playerCharacter.Weapons, Has.Some.Contains("Sword"));
+            // NUnit
+            //Assert.That(playerCharacter.Weapons, Has.Some.Contains("Sword"));
+            // Shouldly
+            playerCharacter.Weapons.ShouldContain(p => p.Contains("Sword"));
         }
     }
 }
