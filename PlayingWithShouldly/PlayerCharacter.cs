@@ -9,9 +9,11 @@ namespace PlayingWithShouldly
     public class PlayerCharacter
     {
         public List<string> Weapons;
+        public int HitPoints { get; private set; }
          
         public PlayerCharacter()
         {
+            HitPoints = 20;
             CreateStartingWeapons();
         }
 
@@ -24,6 +26,11 @@ namespace PlayingWithShouldly
                 "Small Shield"
                 //"Staff of Wonder"
             };
+        }
+
+        public int TakeDamage(int damage)
+        {
+            return HitPoints -= damage;
         }
     }
 }
