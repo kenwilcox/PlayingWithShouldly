@@ -32,5 +32,10 @@ namespace PlayingWithShouldly
         {
             return HitPoints -= damage;
         }
+
+        public int TakePotion(int health)
+        {
+            return HitPoints += health;
+        }
     }
 }
