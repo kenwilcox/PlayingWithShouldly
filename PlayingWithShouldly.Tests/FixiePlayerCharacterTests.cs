@@ -1,4 +1,5 @@
-﻿using Shouldly;
+﻿using System.Collections.Generic;
+using Shouldly;
 
 namespace PlayingWithShouldly.Tests
 {
@@ -13,6 +14,28 @@ namespace PlayingWithShouldly.Tests
         {
             var playerCharacter = new PlayerCharacter();
             playerCharacter.Weapons.ShouldContain("Small Shield");
+        }
+
+        public void ShouldNotHaveAStaffOfWonder()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Weapons.ShouldNotContain("Staff Of Wonder");
+        }
+
+        public void ShouldNotHaveTwoOfTheSameWeapon()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Weapons.ShouldBeUnique();
+        }
+
+        public void TwoPlayersShouldNotBeTheSame()
+        {
+            var player1 = new PlayerCharacter() {Name = "Faldar"};
+            var player2 = new PlayerCharacter() { Name = "Faldar" };
+            player2.Weapons.Add("Ring of Healing");
+            var playerList = new List<PlayerCharacter>() {player1, player2};
+
+            playerList.ShouldBeUnique();
         }
 
         public void DamageShouldTakeAwayHitPoints()
@@ -104,6 +127,18 @@ namespace PlayingWithShouldly.Tests
             var playerCharacter = new PlayerCharacter();
             playerCharacter.Sleep();
             playerCharacter.HitPoints.ShouldNotBeInRange(1, 100);
+        }
+
+        public void ShouldHaveAtLeastOneWeapon()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Weapons.ShouldNotBeEmpty();
+        }
+
+        public void ShouldNotHaveAnyEmptyWeapons()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Weapons.ShouldAllBe(weapon => !string.IsNullOrWhiteSpace(weapon));
         }
     }
 }

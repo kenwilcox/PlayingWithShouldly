@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PlayingWithShouldly
 {
-    public class PlayerCharacter
+    public class PlayerCharacter: IEquatable<PlayerCharacter>
     {
         private string _name;
         public List<string> Weapons;
@@ -43,7 +40,6 @@ namespace PlayingWithShouldly
                 "Long Bow",
                 "Short Sword",
                 "Small Shield"
-                //"Staff of Wonder"
             };
         }
 
@@ -74,6 +70,35 @@ namespace PlayingWithShouldly
         public double AddDoubles(double a, double b)
         {
             return a + b;
+        }
+
+        public bool Equals(PlayerCharacter other)
+        {
+            if (other == null) return false;
+            var hs = new HashSet<string>(Weapons).SetEquals(other.Weapons);
+            return Name == other.Name && HitPoints == other.HitPoints && IsNoob == other.IsNoob && hs;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var pc = obj as PlayerCharacter;
+            return pc != null && Equals(pc);
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();// + HitPoints.GetHashCode();
+        }
+
+        public static bool operator ==(PlayerCharacter pc1, PlayerCharacter pc2)
+        {
+            if (pc1 == null || pc2 == null) return Equals(pc1, pc2);
+            return pc1.Equals(pc2);
+        }
+        public static bool operator !=(PlayerCharacter pc1, PlayerCharacter pc2)
+        {
+            if (pc1 == null || pc2 == null) return !Equals(pc1, pc2);
+            return !pc1.Equals(pc2);
         }
     }
 }
