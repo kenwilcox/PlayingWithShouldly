@@ -25,7 +25,13 @@ namespace PlayingWithShouldly.Tests
         public void ShouldAddNumbers()
         {
             var calculator = new Calculator();
-            Should.CompleteIn(() => Calculator.AddInts(1, 2), TimeSpan.FromMilliseconds(100));
+            Should.CompleteIn(() => calculator.AddInts(1, 2), TimeSpan.FromMilliseconds(100));
+        }
+
+        public void AddInts()
+        {
+            var calculator = new Calculator();
+            calculator.AddInts(1, 2).ShouldBe(3, "Adding two numbers should be easy!");
         }
 
     }

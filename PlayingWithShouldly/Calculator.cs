@@ -9,7 +9,7 @@ namespace PlayingWithShouldly
 {
     public class Calculator
     {
-        public static int AddInts(int a, int b)
+        public int AddInts(int a, int b)
         {
             Thread.Sleep(98);
             return a + b;
