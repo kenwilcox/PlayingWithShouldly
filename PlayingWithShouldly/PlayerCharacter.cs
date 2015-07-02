@@ -16,7 +16,7 @@ namespace PlayingWithShouldly
 
         public PlayerCharacter()
         {
-            HitPoints = 20;
+            HitPoints = 100;
             IsNoob = true;
             Name = GenerateName();
             CreateStartingWeapons();
@@ -62,6 +62,12 @@ namespace PlayingWithShouldly
             var percentage = percent / 100.0;
             var damage = HitPoints * percentage;
             return TakeDamage((int)Math.Ceiling(damage));
+        }
+
+        public void Sleep()
+        {
+            var healthIncrease = new Random().Next(1, 101);
+            HitPoints += healthIncrease;
         }
 
         // This is just for a test case

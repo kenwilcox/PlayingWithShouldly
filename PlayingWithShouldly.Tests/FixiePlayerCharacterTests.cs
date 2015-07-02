@@ -83,5 +83,27 @@ namespace PlayingWithShouldly.Tests
             // This uses the configured tolerance assigned in the constructor
             playerCharacter.AddDoubles(1.1, 2.2).ShouldNotBe(0);
         }
+
+        public void ShouldGainHealthAfterSleeping()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Sleep();
+            playerCharacter.HitPoints.ShouldBeGreaterThan(100);
+            playerCharacter.HitPoints.ShouldBeLessThanOrEqualTo(200);
+        }
+
+        public void ShouldGainHealthAfterSleepingInRange()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Sleep();
+            playerCharacter.HitPoints.ShouldBeInRange(101, 200);
+        }
+
+        public void ShouldGainHealthAfterSleepingNotInRange()
+        {
+            var playerCharacter = new PlayerCharacter();
+            playerCharacter.Sleep();
+            playerCharacter.HitPoints.ShouldNotBeInRange(1, 100);
+        }
     }
 }
