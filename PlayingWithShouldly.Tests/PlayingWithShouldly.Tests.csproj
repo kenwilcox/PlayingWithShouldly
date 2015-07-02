@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NameJoinerTests.cs" />
     <Compile Include="PlayerCharacterTests.cs" />
     <Compile Include="FixiePlayerCharacterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
