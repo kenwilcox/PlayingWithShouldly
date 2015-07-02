@@ -44,5 +44,11 @@ namespace PlayingWithShouldly
             var damage = HitPoints * percentage;
             return TakeDamage((int)Math.Ceiling(damage));
         }
+
+        // This is just for a test case
+        public double AddDoubles(double a, double b)
+        {
+            return a + b;
+        }
     }
 }

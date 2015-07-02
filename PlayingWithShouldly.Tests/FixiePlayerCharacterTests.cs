@@ -4,6 +4,11 @@ namespace PlayingWithShouldly.Tests
 {
     class FixiePlayerCharacterTests
     {
+        public FixiePlayerCharacterTests()
+        {
+            ShouldlyConfiguration.DefaultFloatingPointTolerance = 0.001;
+        }
+
         public void ShouldHaveASmallShield()
         {
             var playerCharacter = new PlayerCharacter();
@@ -35,6 +40,24 @@ namespace PlayingWithShouldly.Tests
             var percent = 10;
             var percentage = currentHitPoints * (percent / 100.0);
             playerCharacter.MagicDamage(percent).ShouldBe(currentHitPoints - percentage);
+        }
+
+        public void JustTestingOutDoublesWithShouldly()
+        {
+            var playerCharacter = new PlayerCharacter();
+            // The additional parameter is a floating point tolerance
+            // This uses the configured tolerance assigned in the constructor
+            playerCharacter.AddDoubles(1.1, 2.2).ShouldBe(3.3);
+            // This tolerance is to high, it passes
+            playerCharacter.AddDoubles(1.1, 2.2).ShouldBe(3.4, 0.1);
+        }
+
+        public void JustTestingOutDoublesWithShouldlyAgain()
+        {
+            var playerCharacter = new PlayerCharacter();
+            // The additional parameter is a floating point tolerance
+            // This uses the configured tolerance assigned in the constructor
+            playerCharacter.AddDoubles(1.1, 2.2).ShouldNotBe(0);
         }
     }
 }
