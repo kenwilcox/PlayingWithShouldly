@@ -44,10 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnemyObjects\BossEnemy.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="EnemyObjects\Enemy.cs" />
+    <Compile Include="EnemyObjects\EnemyFactory.cs" />
     <Compile Include="LogMessageEntry.cs" />
     <Compile Include="LogMessageWriter.cs" />
     <Compile Include="NameJoiner.cs" />
+    <Compile Include="EnemyObjects\NormalEnemy.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="Program.cs" />

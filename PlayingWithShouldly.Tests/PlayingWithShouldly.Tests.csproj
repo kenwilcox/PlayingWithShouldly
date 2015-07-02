@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorTests.cs" />
+    <Compile Include="EnemyFactoryTests.cs" />
     <Compile Include="ExpandoExampleTests.cs" />
     <Compile Include="NameJoinerTests.cs" />
     <Compile Include="DateTimeTests.cs" />
