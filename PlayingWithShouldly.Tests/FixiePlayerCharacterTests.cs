@@ -28,5 +28,13 @@ namespace PlayingWithShouldly.Tests
             playerCharacter.HitPoints.ShouldBe(currentHitPoints + potion);
         }
 
+        public void MagicDamageTakesAPercentageOfHitPoints()
+        {
+            var playerCharacter = new PlayerCharacter();
+            var currentHitPoints = playerCharacter.HitPoints;
+            var percent = 10;
+            var percentage = currentHitPoints * (percent / 100.0);
+            playerCharacter.MagicDamage(percent).ShouldBe(currentHitPoints - percentage);
+        }
     }
 }

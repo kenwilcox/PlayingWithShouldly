@@ -37,5 +37,12 @@ namespace PlayingWithShouldly
         {
             return HitPoints += health;
         }
+
+        public double MagicDamage(int percent)
+        {
+            var percentage = percent / 100.0;
+            var damage = HitPoints * percentage;
+            return TakeDamage((int)Math.Ceiling(damage));
+        }
     }
 }
